@@ -11,7 +11,7 @@ variable "resource_groups" {
   default = {}
 }
 
-variable "subscription_id" {
-  description = "The ID of the subscription where you want to create resources"
-  type        = string
-}
+# variable "subscription_id" {
+#   description = "The ID of the subscription where you want to create resources"
+#   type        = string
+# }
