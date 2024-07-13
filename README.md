@@ -97,7 +97,6 @@ output "subnets" {
 ```
 
 
-
 ## Requirements
 
 | Name | Version |
@@ -115,7 +114,6 @@ No providers.
 |------|--------|---------|
 | <a name="module_resource-group"></a> [resource-group](#module\_resource-group) | ./modules/resource-group | n/a |
 | <a name="module_vnet"></a> [vnet](#module\_vnet) | ./modules/vnet | n/a |
-| <a name="module_keyvault"></a> [keyvault](#module\_keyvault) | ./modules/keyvault | n/a |
 
 ## Resources
 
@@ -125,7 +123,6 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_keyvaults"></a> [keyvaults](#input\_keyvaults) | The keyvaults to create | `map(any)` | n/a | yes |
 | <a name="input_resource_groups"></a> [resource\_groups](#input\_resource\_groups) | Map of resource group details | <pre>map(object({<br>    rg_location = string<br>    rg_tags     = map(string)<br>  }))</pre> | n/a | yes |
 | <a name="input_vnets"></a> [vnets](#input\_vnets) | n/a | `map(any)` | n/a | yes |
 
@@ -134,4 +131,5 @@ No resources.
 | Name | Description |
 |------|-------------|
 | <a name="output_resource-groups"></a> [resource-groups](#output\_resource-groups) | shows All resource groups created in the subscription |
+| <a name="output_subnets"></a> [subnets](#output\_subnets) | shows All subnets created in the subscription |
 | <a name="output_vnets"></a> [vnets](#output\_vnets) | shows All vnets created in the subscription |
