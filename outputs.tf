@@ -1,20 +1,15 @@
-output "rg_name" {
-  value = { for rg in azurerm_resource_group.rg : rg.name => rg.name }
+output "resource-groups" {
+  description = "shows All resource groups created in the subscription"
+  value       = module.resource-group.resource_groups
 }
 
-output "rg_tags" {
-  value = values({ for k, v in azurerm_resource_group.rg : k => v.tags })
+output "vnets" {
+  description = "shows All vnets created in the subscription"
+  value       = module.vnet.vnet
 }
 
-output "rg_id" {
-  value = values({ for k, v in azurerm_resource_group.rg : k => v.id })
-}
-
-output "all" {
-  value = azurerm_resource_group.rg
-}
-
-output "rg_location" {
-  value       = { for k, rg in azurerm_resource_group.rg : k => rg.location }
-  description = "The location of each resource group"
+output "subnets" {
+  description = "shows All subnets created in the subscription"
+  value       = module.vnet.subnet
+  
 }
