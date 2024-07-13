@@ -12,8 +12,8 @@ locals {
   vnet_settings           = jsondecode(file("./network/vnet.json"))
 }
 
-module "spoke" {
-  source  = "app.terraform.io/hcta-azure-dev/spoke/azurerm"
+module "foundation" {
+  source  = "app.terraform.io/<organization>/foundation/azurerm"
   version = "<version>"
  
   resource_groups = local.resource_group.resource_groups
@@ -80,17 +80,17 @@ Outputs Examples:
 
 ```terraform
 output "resource-groups" {
-  value = module.spoke.resource-groups
+  value = module.foundation.resource-groups
   description = "value of resource-groups"
 }
 
 output "vnets" {
-  value = module.spoke.vnets
+  value = module.foundation.vnets
   description = "value of vnets"
 }
 
 output "subnets" {
-  value       = module.vnet.subnet
+  value       = module.foundation.subnet
   description = "shows All subnets created in the subscription"
 }
 
